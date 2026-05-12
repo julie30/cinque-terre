@@ -1,0 +1,103 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+figure {
+    background-color: #ffffff;
+    border: 3px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+figcaption {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+/* Tablet view */
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    figure {
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+        padding: 0;
+    }
+
+
+    figure:last-child {
+        grid-column: 1 / span 2;
+    }
+}
+
+/* Large screen view */
+@media screen and (min-width: 992px) {
+    figure {
+        border-radius: 0;
+    }
+
+    figure:nth-child(3n) {
+        grid-column: 1 / span 2;
+    }
+}
+
+/* Reduced motion */
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark color scheme */
+@media screen and (prefers-color-scheme: dark) {
+    figure {
+        background-color: #333333;
+        color: #fff4a3;
+        border-color: #000000;
+    }
+
+    body {
+        background-color: #111111;
+        color: #ffffff;
+    }
+
+    a {
+        color: #fff4a3;
+    }
+}
